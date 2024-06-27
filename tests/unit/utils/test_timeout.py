@@ -122,3 +122,28 @@ class WaitForTests(TestCase):
     def test_return_false(self):
         ret = self.true_after_1s()
         self.assertFalse(ret)
+
+    def test_wait_for_negative_timeout(self):
+        ret = wait_for(self.true_after_1s, timeout=-1, step=0.5)
+        self.assertFalse(ret)
+
+    def test_wait_for_function_returning_false(self):
+        def false_after_1s():
+            return False
+
+        ret = wait_for(false_after_1s, timeout=2, step=0.5)
+        self.assertFalse(ret)
+
+    def test_wait_for_timeout_equal_to_step(self):
+        ret = wait_for(self.true_after_1s, timeout=1.5, step=1.5)
+        self.assertTrue(ret)
+
+    def test_return_args_after_timeout(self):
+        args_after_3s = return_args_after(3)
+        args = ("one", "two")
+
+        ret = wait_for(args_after_3s, timeout=4, step=0.5, func_args=args)
+
+        self.assertEqual(ret, args)
+
+
