@@ -79,6 +79,35 @@ class PathJoinTestCase(TestCase):
         actual = salt.utils.path.join(a, b)
         assert actual == expected
 
+    def test_join_with_empty_strings(self):
+        """
+        Test joining paths with empty strings.
+        """
+        test_cases = [
+            (("/foo", ""), "/foo"),
+            (("", "/bar"), "/bar"),
+            (("/foo", "", "bar"), "/foo/bar"),
+            (("", ""), "")
+        ]
+        for parts, expected in test_cases:
+            result = salt.utils.path.join(*parts)
+            assert result == expected
+
+    def test_join_with_special_characters(self):
+        """
+        Test joining paths that contain special characters.
+        """
+        test_cases = [
+            (("/foo", "bar!@#"), "/foo/bar!@#"),
+            (("/foo$", "&bar"), "/foo$/&bar"),
+            (("/foo", "bar space"), "/foo/bar space"),
+            (("/foo", "bar\tnewline\n"), "/foo/bar\tnewline\n"),
+        ]
+        for parts, expected in test_cases:
+            result = salt.utils.path.join(*parts)
+            assert result == expected
+
+
     def __patch_path(self):
         modules = list(self.BUILTIN_MODULES[:])
         modules.pop(modules.index("posix"))
