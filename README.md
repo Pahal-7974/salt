@@ -14,15 +14,15 @@ Programming language: Python
 ### Existing tool
 
 Coverage.py was used as the coverage tool
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%201.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/sep%201.png)
 
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%202.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/sep%202.png)
 
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%203.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/sep%203.png)
 
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%204.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/sep%204.png)
 
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%205.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/sep%205.png)
 
 
 
@@ -33,11 +33,11 @@ Varuni Sood
 
 Function 1: unit>transport>test_ipc>def teardown(self)
 URL: https://github.com/Pahal-7974/salt/commit/1b2942823a7228dde5195fa56a12335a14123bf5 
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v1.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/v1.png)
 
 Function 2: unit>transport>test_ipc>def test_multi_client_reading(self)
 URL: https://github.com/Pahal-7974/salt/commit/e9a60bf5dba7660168c73c2c3842843786d3b872 
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v2.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/v2.png)
 
 
 
@@ -45,17 +45,17 @@ Pahal Agrawal
 
 Function 1: unit>utils>test_botomod.py> def _has_required_boto()
 URL: https://github.com/Pahal-7974/salt/commit/cc1929d4ae43fb75aa0614f1ddc2e494a4c85680
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/p1.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/p1.png)
 
 Function 2: unit>states>test_module.py> def test_run_typed_return(self)
 URL: https://github.com/Pahal-7974/salt/commit/9943b4425529fd381f42917251e116a88a78c870
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/p2.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/p2.png)
 
 
 
 Sakshi Sharma
 URL: ​​https://github.com/Pahal-7974/salt/tree/sakshicherry4-patch-1
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/s1.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/s1.png)
 
 
 
@@ -66,16 +66,16 @@ URL: ​​https://github.com/Pahal-7974/salt/tree/sakshicherry4-patch-1
 
 return_something_after -> first function 
 return_args_after ->  second function
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/s2.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/s2.png)
 
 
 
 
 Function 1: unit>utils>test_timeout>return_something_after()
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/s3.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/s3.png)
 
 Function 2: unit>utils>test_timeout>return_args_after()
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/s4.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/s4.png)
 
 
 
@@ -88,16 +88,16 @@ Function 2: unit>utils>test_timeout>return_args_after()
 Pahal Agrawal
 Test 1: unit>utils>test_path.py
 URL: https://github.com/Pahal-7974/salt/commit/676bfb5d48d5b3177be5af86e17fb8cbd4c27456
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/p3.png)
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/p4.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/p3.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/p4.png)
 
 
 The coverage went from 78% to 79%. The file in question, test_path.py tests and checks for possible filepaths. However, not all edge cases are covered. I added a function to check for paths with empty strings and assert whether or not it works. Since the file is so big, The five branches I added (for loop iterations) increase the branch coverage by the seemingly low value of 1%.
 
 Test 2: unit>utils>test_path.py
 URL: https://github.com/Pahal-7974/salt/commit/676bfb5d48d5b3177be5af86e17fb8cbd4c27456
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/p5.png)
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/p6.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/p5.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/p6.png)
 
 The coverage went from 79% to 80%. This is the same file as the one for the first test, hence the old coverage is the same as the new coverage for Test 1. I added a similar function to check if the application works with special characters in the paths. Both these are possible edge cases. The code that I added adds ten branches to the existing code, increasing the coverage by 1%.
 
@@ -106,11 +106,11 @@ Test 1: unit>transport>test_ipc.py>test_empty_message(self)
 URL: https://github.com/saltstack/salt/commit/8799995696914a1a02fb0ec17ca754e223cb7884 
 
 Old coverage results
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v3.jpg)
+(https://github.com/Pahal-7974/salt/blob/master/images/v3.jpg)
 
 
 New coverage results
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v4.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/v4.png)
 
 
 
@@ -122,11 +122,11 @@ Test 2: unit>transport>test_ipc>test_large_message(self) and unit>transport>test
 URL: https://github.com/saltstack/salt/commit/8799995696914a1a02fb0ec17ca754e223cb7884 
 
 old coverage results
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v5.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/v5.png)
 
 
 new coverage results
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v6.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/v6.png)
 
 
 The coverage increases by one per cent. The purpose is to enhance the system's ability to handle large messages and to process binary data correctly. The current code was not performing these actions effectively
@@ -135,24 +135,24 @@ Test 3: unit>transport>test_ipc>test_message_order(self)
 URL: https://github.com/saltstack/salt/commit/8799995696914a1a02fb0ec17ca754e223cb7884 
 
 Old coverage results
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v7.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/v7.png)
 
 
 New coverage results
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v8.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/v8.png)
 
 
--> The coverage improvement is only one per cent, however, this checks a very important case, that is if messages are being received in the correct order. It ensures messages are being received in the same order as the one they are sent in and also can validate the system's ability to correctly handle asynchronous multiple message reads to a certain extent.
+The coverage improvement is only one per cent, however, this checks a very important case, that is if messages are being received in the correct order. It ensures messages are being received in the same order as the one they are sent in and also can validate the system's ability to correctly handle asynchronous multiple message reads to a certain extent.
 
 Test 4: unit>transport>test_ipc>test_error_handling_in_publisher functions, test_error_handling_in_subscriber
 URL: https://github.com/saltstack/salt/commit/8799995696914a1a02fb0ec17ca754e223cb7884 
 
 Old coverage results
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v9.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/v9.png)
 
 
 New coverage results
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v10.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/v10.png)
 
 
 The coverage increases by two per cent. The function handles the response to the system when it attempts to publish messages on a closed channel and when it tries to read from a closed channel by raising exceptions.
@@ -164,44 +164,44 @@ Sakshi Sharma
 URL: https://github.com/Pahal-7974/salt/tree/sakshicherry4-patch-1
 
 Old coverage results (the same as you already showed above)>
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/s5.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/s5.png)
 
 
 New coverage results>
 
 Test 1: def test_wait_for_negative_timeout(self)
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/s6.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/s6.png)
 
 The coverage percentage increased from 60% to 66% with the help of this function. The function basically showcases that if a negative value is given to wait_for, the function returns False justifying its behavior while handling invalid input scenarios. This is an edge case which was not taken care of in the original code.
 
 
 Test 2: def test_wait_for_function_returning_false(self)
 The coverage increased from 66% to 68%. Basically handles a function that does not meet a certain requirement in a given/ specific amount of time. This is an edge case which was not taken care of in the original code.
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/s7.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/s7.png)
 
 
 Test 3: def test_wait_for_timeout_equal_to_step(self)
 The coverage went up from 68% to 71% because of this function. The wait_for correctly terminates the waiting process if the condition does not meet within the time frame in the first step itself.
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/s8.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/s8.png)
 
 
 Test 4: def test_return_args_after_timeout(self):
 Coverage increased from 71% to 80%. Method basically ensures that correct arguments are returned within a given timeout period.
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/s9.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/s9.png)
 
 
 
 Overall
 Old Coverage(27%):
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%201.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/sep%201.png)
 
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%202.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/sep%202.png)
 
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%203.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/sep%203.png)
 
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%204.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/sep%204.png)
 
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%205.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/sep%205.png)
 
 
 
@@ -209,13 +209,13 @@ Old Coverage(27%):
 
 
 New Coverage (28%):
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep6.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/sep6.png)
 
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep7.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/sep7.png)
 
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep8.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/sep8.png)
 
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep9.png)
+(https://github.com/Pahal-7974/salt/blob/master/images/sep9.png)
 
 
 Statement of individual contributions
