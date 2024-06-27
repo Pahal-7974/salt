@@ -27,7 +27,7 @@ pytestmark = [
 
 log = logging.getLogger(__name__)
 
-coverage = {i: False for i in range(1, 3)}
+coverage = {i: False for i in range(1, 9)}
 
 def branch_hit(branch_id):
     coverage[branch_id] = True
@@ -37,6 +37,16 @@ class IPCMessagePubSubCase(tornado.testing.AsyncTestCase):
     """
     Test all of the clear msg stuff
     """
+    coverage_file_path = os.path.join(os.getcwd(), "test_ipc_coverage.txt")
+    total_branches = len(coverage)
+    branches_hit = sum(1 for hit in coverage.values() if hit)
+
+    with open(coverage_file_path, "w") as f:
+        for branch_id in range(1, total_branches + 1):
+            hit_status = 'Hit' if coverage[branch_id] else 'Missed'
+            f.write(f"Branch {branch_id}: {hit_status}\n")
+        percentage_hit = (branches_hit / total_branches) * 100
+        f.write(f"\nBranches Hit: {branches_hit}/{total_branches} ({percentage_hit:}%)\n")
 
     def setUp(self):
         super().setUp()
@@ -67,24 +77,24 @@ class IPCMessagePubSubCase(tornado.testing.AsyncTestCase):
     def tearDown(self):
         super().tearDown()
         try:
-            # branch_hit(1)
+            branch_hit(1)
             self.pub_channel.close()
         except RuntimeError as exc:
-            # branch_hit(2)
+            branch_hit(2)
             pass
         except OSError as exc:
-            # branch_hit(3)
+            branch_hit(3)
             if exc.errno != errno.EBADF:
                 # If its not a bad file descriptor error, raise
                 raise
         try:
-            # branch_hit(4)
+            branch_hit(4)
             self.sub_channel.close()
         except RuntimeError as exc:
-            # branch_hit(5)
+            branch_hit(5)
             pass
         except OSError as exc:
-            # branch_hit(6)
+            branch_hit(6)
             if exc.errno != errno.EBADF:
                 # If its not a bad file descriptor error, raise
                 raise
@@ -97,17 +107,6 @@ class IPCMessagePubSubCase(tornado.testing.AsyncTestCase):
         client1 = self.sub_channel
         client2 = self._get_sub_channel()
         call_cnt = []
-
-        coverage_file_path = os.path.join(os.getcwd(), "test_ipc_coverage.txt")
-        total_branches = len(coverage)
-        branches_hit = sum(1 for hit in coverage.values() if hit)
-
-        with open(coverage_file_path, "w") as f:
-            for branch_id in range(1, total_branches + 1):
-                hit_status = 'Hit' if coverage[branch_id] else 'Missed'
-                f.write(f"Branch {branch_id}: {hit_status}\n")
-            percentage_hit = (branches_hit / total_branches) * 100
-            f.write(f"\nBranches Hit: {branches_hit}/{total_branches} ({percentage_hit:}%)\n")
 
         # Create a watchdog to be safe from hanging in sync loops (what old code did)
         evt = threading.Event()
@@ -125,10 +124,10 @@ class IPCMessagePubSubCase(tornado.testing.AsyncTestCase):
         def handler(raw):
             call_cnt.append(raw)
             if len(call_cnt) >= 2:
-                branch_hit(1)
+                branch_hit(7)
                 evt.set()
                 self.stop()
-            else: branch_hit(2)
+            else: branch_hit(8)
 
         # Now let both waiting data at once
         client1.read_async(handler)
@@ -179,3 +178,70 @@ class IPCMessagePubSubCase(tornado.testing.AsyncTestCase):
             self.wait()
         except StreamClosedError as ex:
             assert False, "StreamClosedError was raised inside the Future"
+
+#additional tests
+    def test_message_order(self):
+        client1 = self.sub_channel
+        messages = ["message1", "message2", "message3"]
+        received_messages = []
+
+        def handler(raw):
+            received_messages.append(raw)
+            if len(received_messages) == len(messages):
+                self.stop()
+
+        for msg in messages:
+            self.pub_channel.publish(msg)
+
+        client1.read_async(handler)
+        self.wait()
+        self.assertEqual(received_messages, messages)
+
+    def test_empty_message(self):
+        client1 = self.sub_channel
+
+        def handler(raw):
+            self.assertEqual(raw, "")
+            self.stop()
+
+        self.pub_channel.publish("")
+        client1.read_async(handler)
+        self.wait()
+
+    def test_large_message(self):
+        client1 = self.sub_channel
+        large_message = "A" * 1024 * 1024
+
+        def handler(raw):
+            self.assertEqual(raw, large_message)
+            self.stop()
+
+        self.pub_channel.publish(large_message)
+        client1.read_async(handler)
+        self.wait()
+
+    def test_binary_data(self):
+        client1 = self.sub_channel
+        binary_data = b"\x00\xFF\xFE\xFD"
+
+        def handler(raw):
+            self.assertEqual(raw, binary_data)
+            self.stop()
+
+        self.pub_channel.publish(binary_data)
+        client1.read_async(handler)
+        self.wait()
+
+    def test_error_handling_in_publisher(self):
+        pub_channel = self.pub_channel
+        pub_channel.close()
+
+        with self.assertRaises(salt.exceptions.SaltMasterError):
+            pub_channel.publish("TEST")
+
+    def test_error_handling_in_subscriber(self):
+        client1 = self.sub_channel
+        client1.close()
+
+        with self.assertRaises(StreamClosedError):
+            client1.read_sync()
