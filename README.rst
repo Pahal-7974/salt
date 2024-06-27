@@ -55,6 +55,49 @@ URL: https://github.com/Pahal-7974/salt/commit/9943b4425529fd381f42917251e116a88
 
 
 
+Sakshi Sharma
+Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements
+​​https://github.com/Pahal-7974/salt/tree/sakshicherry4-patch-1
+
+Provide a screenshot of the coverage results output by the instrumentation
+
+
+
+
+
+
+
+
+
+return_something_after -> first function 
+return_args_after ->  second function
+
+
+
+
+
+Function 1:
+return_something_after
+
+
+Function 2:
+return_args_after
+
+
+
+
+Pahal Agrawal
+Test 1: unit>utils>test_path.py
+https://github.com/Pahal-7974/salt/commit/676bfb5d48d5b3177be5af86e17fb8cbd4c27456
+
+
+The coverage went from 78% to 79%. The file in question, test_path.py tests and checks for possible filepaths. However, not all edge cases are covered. I added a function to check for paths with empty strings and assert whether or not it works. Since the file is so big, The five branches I added (for loop iterations) increase the branch coverage by the seemingly low value of 1%.
+
+Test 2: unit>utils>test_path.py
+https://github.com/Pahal-7974/salt/commit/676bfb5d48d5b3177be5af86e17fb8cbd4c27456
+
+The coverage went from 79% to 80%. This is the same file as the one for the first test, hence the old coverage is the same as the new coverage for Test 1. I added a similar function to check if the application works with special characters in the paths. Both these are possible edge cases. The code that I added adds ten branches to the existing code, increasing the coverage by 1%.
+
 Varuni Sood
 ## Coverage improvement
 
@@ -121,69 +164,6 @@ Provide a screenshot of the new coverage results
 State the coverage improvement with a number and elaborate on why the coverage is improved
 -> The coverage increases by two per cent. The function handles the response to the system when it attempts to publish messages on a closed channel and when it tries to read from a closed channel by raising exceptions.
 Sakshi Sharma
-## Coverage measurement
-
-### Existing tool
-
-<Inform the name of the existing tool that was executed and how it was executed>
-
-Coverage.py was used
-
-<Show the coverage results provided by the existing tool with a screenshot>
-
-tests-->unit->util->test_timeout.py
-
-
-
-
-
-
-
-### Your own coverage tool
-
-Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements
-​​https://github.com/Pahal-7974/salt/tree/sakshicherry4-patch-1
-
-Provide a screenshot of the coverage results output by the instrumentation
-
-
-
-
-
-
-
-
-
-return_something_after -> first function 
-return_args_after ->  second function
-
-
-
-
-
-Function 1:
-return_something_after
-
-
-Function 2:
-return_args_after
-
-
-
-
-Pahal Agrawal
-Test 1: unit>utils>test_path.py
-https://github.com/Pahal-7974/salt/commit/676bfb5d48d5b3177be5af86e17fb8cbd4c27456
-
-
-The coverage went from 78% to 79%. The file in question, test_path.py tests and checks for possible filepaths. However, not all edge cases are covered. I added a function to check for paths with empty strings and assert whether or not it works. Since the file is so big, The five branches I added (for loop iterations) increase the branch coverage by the seemingly low value of 1%.
-
-Test 2: unit>utils>test_path.py
-https://github.com/Pahal-7974/salt/commit/676bfb5d48d5b3177be5af86e17fb8cbd4c27456
-
-The coverage went from 79% to 80%. This is the same file as the one for the first test, hence the old coverage is the same as the new coverage for Test 1. I added a similar function to check if the application works with special characters in the paths. Both these are possible edge cases. The code that I added adds ten branches to the existing code, increasing the coverage by 1%.
-
-Sakshi Sharma
 ## Coverage improvement
 
 ### Individual tests
@@ -231,6 +211,7 @@ Old Coverage(27%):
 
 
 
+
 New Coverage (28%):
 
 
@@ -263,4 +244,6 @@ tests>unit>utils>test_path.py>test_join_with_special_characters(self)
 Overall Coverage using existing tool:
 Sakshi and Varuni (code did not work on Pahal’s system)
 Contributions were still equal because of use of liveshare on VSC.
+
+
 
