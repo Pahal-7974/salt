@@ -27,7 +27,7 @@ pytestmark = [
 
 log = logging.getLogger(__name__)
 
-coverage = {i: False for i in range(1, 9)}
+coverage = {i: False for i in range(1, 7)}
 
 def branch_hit(branch_id):
     coverage[branch_id] = True
