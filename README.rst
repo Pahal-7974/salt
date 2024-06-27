@@ -13,10 +13,14 @@ Coverage measurement
 Existing tool
 
 Coverage.py was used as the coverage tool
-https://github.com/Pahal-7974/salt/blob/master/images/sep%201.png
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%201.png)
+
 ![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%202.png)
+
 ![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%203.png)
+
 ![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%204.png)
+
 ![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%205.png)
 
 
@@ -47,7 +51,7 @@ Show a patch (diff) or a link to a commit made in your forked repository that sh
 https://github.com/Pahal-7974/salt/commit/e9a60bf5dba7660168c73c2c3842843786d3b872 
 
 Provide a screenshot of the coverage results output by the instrumentation
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v1.png)
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v2.png)
 
 
 Pahal Agrawal
@@ -98,13 +102,15 @@ Pahal Agrawal
 Test 1: unit>utils>test_path.py
 https://github.com/Pahal-7974/salt/commit/676bfb5d48d5b3177be5af86e17fb8cbd4c27456
 ![alt text](https://github.com/Pahal-7974/salt/blob/master/images/p3.png)
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/p4.png)
 
 
 The coverage went from 78% to 79%. The file in question, test_path.py tests and checks for possible filepaths. However, not all edge cases are covered. I added a function to check for paths with empty strings and assert whether or not it works. Since the file is so big, The five branches I added (for loop iterations) increase the branch coverage by the seemingly low value of 1%.
 
 Test 2: unit>utils>test_path.py
 https://github.com/Pahal-7974/salt/commit/676bfb5d48d5b3177be5af86e17fb8cbd4c27456
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/p4.png)
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/p5.png)
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/p6.png)
 
 The coverage went from 79% to 80%. This is the same file as the one for the first test, hence the old coverage is the same as the new coverage for Test 1. I added a similar function to check if the application works with special characters in the paths. Both these are possible edge cases. The code that I added adds ten branches to the existing code, increasing the coverage by 1%.
 
@@ -115,6 +121,7 @@ Varuni Sood
 
 Provide a screenshot of the new coverage results
 
+
 State the coverage improvement with a number and elaborate on why the coverage is improved
 
 Test 1: unit>transport>test_ipc>test_empty_message(self)
@@ -123,9 +130,11 @@ Show a patch (diff) or a link to a commit made in your forked repository that sh
 https://github.com/saltstack/salt/commit/8799995696914a1a02fb0ec17ca754e223cb7884 
 
 Provide a screenshot of the old coverage results (the same as you already showed above)
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v3.jpg)
 
 
 Provide a screenshot of the new coverage results
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v4.png)
 
 
 State the coverage improvement with a number and elaborate on why the coverage is improved
@@ -138,9 +147,11 @@ Show a patch (diff) or a link to a commit made in your forked repository that sh
 https://github.com/saltstack/salt/commit/8799995696914a1a02fb0ec17ca754e223cb7884 
 
 Provide a screenshot of the old coverage results (the same as you already showed above)
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v5.png)
 
 
 Provide a screenshot of the new coverage results
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v6.png)
 
 
 State the coverage improvement with a number and elaborate on why the coverage is improved
@@ -152,9 +163,11 @@ Show a patch (diff) or a link to a commit made in your forked repository that sh
 https://github.com/saltstack/salt/commit/8799995696914a1a02fb0ec17ca754e223cb7884 
 
 Provide a screenshot of the old coverage results (the same as you already showed above)
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v7.png)
 
 
 Provide a screenshot of the new coverage results
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v8.png)
 
 
 State the coverage improvement with a number and elaborate on why the coverage is improved
@@ -166,13 +179,17 @@ Show a patch (diff) or a link to a commit made in your forked repository that sh
 https://github.com/saltstack/salt/commit/8799995696914a1a02fb0ec17ca754e223cb7884 
 
 Provide a screenshot of the old coverage results (the same as you already showed above)
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v9.png)
 
 
 Provide a screenshot of the new coverage results
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/v10.png)
 
 
 State the coverage improvement with a number and elaborate on why the coverage is improved
 -> The coverage increases by two per cent. The function handles the response to the system when it attempts to publish messages on a closed channel and when it tries to read from a closed channel by raising exceptions.
+
+
 Sakshi Sharma
 ## Coverage improvement
 
@@ -186,11 +203,14 @@ Sakshi Sharma
 https://github.com/Pahal-7974/salt/tree/sakshicherry4-patch-1
 
 <Provide a screenshot of the old coverage results (the same as you already showed above)>
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/s5.png)
 
 
 <Provide a screenshot of the new coverage results>
+
 Test 1: 
 def test_wait_for_negative_timeout(self)
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/s6.png)
 
 State the coverage improvement with a number and elaborate on why the coverage is improved: The coverage percentage increased from 60% to 66% with the help of this function. The function basically showcases that if a negative value is given to wait_for, the function returns False justifying its behavior while handling invalid input scenarios. This is an edge case which was not taken care of in the original code.
 
@@ -198,24 +218,33 @@ State the coverage improvement with a number and elaborate on why the coverage i
 Test 2
  def test_wait_for_function_returning_false(self)
 State the coverage improvement with a number and elaborate on why the coverage is improved: The coverage increased from 66% to 68%. Basically handles a function that does not meet a certain requirement in a given/ specific amount of time. This is an edge case which was not taken care of in the original code.
-
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/s7.png)
 
 
 Test 3
 def test_wait_for_timeout_equal_to_step(self)
 State the coverage improvement with a number and elaborate on why the coverage is improved: The coverage went up from 68% to 71% because of this function. The wait_for correctly terminates the waiting process if the condition does not meet within the time frame in the first step itself.
-
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/s8.png)
 
 
 Test 4
 def test_return_args_after_timeout(self):
 State the coverage improvement with a number and elaborate on why the coverage is improved: Coverage increased from 71% to 80%. Method basically ensures that correct arguments are returned within a given timeout period.
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/s9.png)
 
 
 
 Overall
 Old Coverage(27%):
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%201.png)
 
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%202.png)
+
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%203.png)
+
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%204.png)
+
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%205.png)
 
 
 
@@ -223,8 +252,13 @@ Old Coverage(27%):
 
 
 New Coverage (28%):
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep6.png)
 
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep7.png)
 
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep8.png)
+
+![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep9.png)
 
 
 Statement of individual contributions
