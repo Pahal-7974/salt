@@ -13,7 +13,7 @@ Coverage measurement
 Existing tool
 
 Coverage.py was used as the coverage tool
-![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%201.png)
+https://github.com/Pahal-7974/salt/blob/master/images/sep%201.png
 ![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%202.png)
 ![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%203.png)
 ![alt text](https://github.com/Pahal-7974/salt/blob/master/images/sep%204.png)
