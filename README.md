@@ -29,7 +29,7 @@ Coverage.py was used as the coverage tool
 
 ### Your own coverage tool
 
-Varuni Sood
+### Varuni Sood
 
 Function 1: unit>transport>test_ipc>def teardown(self)
 URL: https://github.com/Pahal-7974/salt/commit/1b2942823a7228dde5195fa56a12335a14123bf5 
@@ -41,7 +41,7 @@ URL: https://github.com/Pahal-7974/salt/commit/e9a60bf5dba7660168c73c2c384284378
 
 
 
-Pahal Agrawal
+### Pahal Agrawal
 
 Function 1: unit>utils>test_botomod.py> def _has_required_boto()
 URL: https://github.com/Pahal-7974/salt/commit/cc1929d4ae43fb75aa0614f1ddc2e494a4c85680
@@ -53,7 +53,7 @@ URL: https://github.com/Pahal-7974/salt/commit/9943b4425529fd381f42917251e116a88
 
 
 
-Sakshi Sharma
+### Sakshi Sharma
 URL: ​​https://github.com/Pahal-7974/salt/tree/sakshicherry4-patch-1
 (https://github.com/Pahal-7974/salt/blob/master/images/s1.png)
 
@@ -85,7 +85,7 @@ Function 2: unit>utils>test_timeout>return_args_after()
 
 
 
-Pahal Agrawal
+### Pahal Agrawal
 Test 1: unit>utils>test_path.py
 URL: https://github.com/Pahal-7974/salt/commit/676bfb5d48d5b3177be5af86e17fb8cbd4c27456
 (https://github.com/Pahal-7974/salt/blob/master/images/p3.png)
@@ -101,7 +101,7 @@ URL: https://github.com/Pahal-7974/salt/commit/676bfb5d48d5b3177be5af86e17fb8cbd
 
 The coverage went from 79% to 80%. This is the same file as the one for the first test, hence the old coverage is the same as the new coverage for Test 1. I added a similar function to check if the application works with special characters in the paths. Both these are possible edge cases. The code that I added adds ten branches to the existing code, increasing the coverage by 1%.
 
-Varuni Sood
+### Varuni Sood
 Test 1: unit>transport>test_ipc.py>test_empty_message(self)
 URL: https://github.com/saltstack/salt/commit/8799995696914a1a02fb0ec17ca754e223cb7884 
 
@@ -159,7 +159,7 @@ The coverage increases by two per cent. The function handles the response to the
 
 
 
-Sakshi Sharma
+### Sakshi Sharma
 
 URL: https://github.com/Pahal-7974/salt/tree/sakshicherry4-patch-1
 
@@ -218,9 +218,9 @@ New Coverage (28%):
 (https://github.com/Pahal-7974/salt/blob/master/images/sep9.png)
 
 
-Statement of individual contributions
+### Statement of individual contributions
 
-Sakshi:
+### Sakshi:
 tests-->unit->util->test_timeout.py
 Created my own coverage measurement tool for 2 functions: return_something_after and return_args_after
 Implemented 4 new functions to increase coverage:
@@ -230,11 +230,11 @@ def test_wait_for_timeout_equal_to_step(self)
 def test_return_args_after_timeout(self)
   
 
-Varuni:
+### Varuni:
 Coverage measurement tool for: tests>unit>transport>test_ipc.py>tearDown and tests>unit>transport>test_ipc.py>test_multi_client_reading
 Enhanced the coverage by adding these: test_empty_message(self), test_large_message(self), test_binary_data(self), test_message_order(self), test_error_handling_in_publisher, test_error_handling_in_subscriber
 
-Pahal:
+### Pahal:
 Code Instrumentation to create coverage measurement tool:
 tests>unit>utils>test_botomod.py
 tests>unit>states>test_module.py
