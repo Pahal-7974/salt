@@ -197,7 +197,7 @@ State the coverage improvement with a number and elaborate on why the coverage i
 
 
 
-<Test 4>
+Test 4
 def test_return_args_after_timeout(self):
 State the coverage improvement with a number and elaborate on why the coverage is improved: Coverage increased from 71% to 80%. Method basically ensures that correct arguments are returned within a given timeout period.
 
